@@ -28,3 +28,12 @@ add_button.addEventListener('click', () => {
   input_name.value = '';
   input_price.value = '';
 });
+
+// TO DO
+/*
+[작성해야할 기능]
+
+2. delete버튼을 누르면 체크된 아이템들 삭제하기
+
+3. 체크된 아이템, 체크되지 않은 아이템, 총 아이템들의 가격을 업데이트하기 (아이템이 추가/삭제될 때마다)
+ */
