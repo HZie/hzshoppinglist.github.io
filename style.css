@@ -66,6 +66,7 @@ body {
 
 .add_button:hover {
   color: var(--color-yellow);
+  cursor: pointer;
 }
 
 .add {
