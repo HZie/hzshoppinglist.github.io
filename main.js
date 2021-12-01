@@ -7,7 +7,15 @@ const itemList = document.querySelector('.item-list');
 
 add_button.addEventListener('click', () => {
   const itemName = input_name.value;
-  const itemPrice = input_price.value;
+  let itemPrice = input_price.value;
+  if (itemName == '') {
+    alert('Please enter the item name.');
+    return;
+  }
+  if (itemPrice == '') {
+    itemPrice = 0;
+  }
+
   const item = document.createElement('div');
   item.setAttribute('class', 'item');
   item.innerHTML = `

@@ -4,6 +4,7 @@
   --color-white: #ffffff;
   --color-light-white: #eeeeee;
   --color-dark-white: #bdbdbd;
+  --color-yellow: #fad05c;
 
   /* Font size */
   --font-large: 48px;
@@ -61,6 +62,10 @@ body {
   font-size: var(--font-medium);
   text-align: right;
   margin-bottom: 3px;
+}
+
+.add_button:hover {
+  color: var(--color-yellow);
 }
 
 .add {
