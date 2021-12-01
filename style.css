@@ -48,6 +48,12 @@ body {
   width: 800px;
 }
 
+.title {
+  text-align: center;
+  font-size: var(--font-large);
+  padding: 10px;
+}
+
 .receipt_bottom {
   display: block;
   margin: auto;
