@@ -114,6 +114,27 @@ body {
   margin-right: 10px;
 }
 
+/* Summary */
+.horizontal-line {
+  width: 90%;
+  height: 2px;
+  margin: 10px 0;
+  background-color: black;
+}
+
+.sum {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.sum_item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+/* Receipt Layout */
 .receipt_bottom {
   display: block;
   margin: auto;
