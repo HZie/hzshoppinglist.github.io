@@ -48,10 +48,25 @@ body {
   width: 800px;
 }
 
+/* Title */
 .title {
   text-align: center;
   font-size: var(--font-large);
   padding: 10px;
+}
+
+/* Add Items */
+.add {
+  padding: 5px;
+  text-align: center;
+}
+
+.add_input {
+  height: 30px;
+  border-top: none;
+  border-right: none;
+  border-bottom: 2px solid black;
+  border-left: none;
 }
 
 .receipt_bottom {
