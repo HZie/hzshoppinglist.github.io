@@ -4,10 +4,6 @@
   --color-white: #ffffff;
   --color-light-white: #eeeeee;
   --color-dark-white: #bdbdbd;
-  --color-dark-grey: #4d4d4d;
-  --color-grey: #616161;
-  --color-light-grey: #7c7979;
-  --color-black: #000000;
 
   /* Font size */
   --font-large: 48px;
@@ -74,6 +70,7 @@ body {
 }
 
 .add_input {
+  font-family: 'Yeon Sung', cursive;
   height: 30px;
   width: 47%;
   border-top: none;
@@ -92,6 +89,7 @@ body {
 }
 
 .item-list button {
+  font-family: 'Yeon Sung', cursive;
   width: fit-content;
   border: 2px solid black;
   border-radius: var(--size-border-radius);
