@@ -33,6 +33,7 @@ body {
   font-family: 'Yeon Sung', cursive;
   margin: 0;
   background-color: var(--color-light-white);
+  font-size: var(--font-regular);
 }
 
 /* Main */
@@ -59,6 +60,13 @@ body {
 }
 
 /* Add Items */
+.add_button {
+  width: 90%;
+  font-size: var(--font-medium);
+  text-align: right;
+  margin-bottom: 3px;
+}
+
 .add {
   width: 90%;
   font-size: var(--font-regular);
@@ -67,15 +75,12 @@ body {
 
 .add_input {
   height: 30px;
+  width: 47%;
   border-top: none;
   border-right: none;
   border-bottom: 2px solid black;
   border-left: none;
   font-size: var(--font-regular);
-}
-
-.add i {
-  font-size: var(--font-medium);
 }
 
 /* Item List */
