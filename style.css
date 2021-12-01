@@ -33,6 +33,10 @@ body {
   font-size: var(--font-regular);
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
 /* Main */
 
 .receipt_top {
@@ -121,6 +125,11 @@ body {
   width: 20%;
   text-align: right;
   margin-right: 10px;
+}
+
+.item_delete-button:hover {
+  color: var(--color-yellow);
+  cursor: pointer;
 }
 
 /* Summary */

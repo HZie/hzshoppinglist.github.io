@@ -16,7 +16,7 @@ add_button.addEventListener('click', () => {
     itemPrice = 0;
   }
 
-  const item = document.createElement('div');
+  const item = document.createElement('li');
   item.setAttribute('class', 'item');
   item.innerHTML = `
           <input type="checkbox" class="item_checkbox" />
@@ -27,6 +27,12 @@ add_button.addEventListener('click', () => {
   itemList.appendChild(item);
   input_name.value = '';
   input_price.value = '';
+});
+
+const deleteBtn = document.querySelector('.item_delete-button');
+
+deleteBtn.addEventListener('click', () => {
+  console.log('clicked');
 });
 
 // TO DO
