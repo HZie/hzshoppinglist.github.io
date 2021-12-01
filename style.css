@@ -59,6 +59,7 @@ body {
 .add {
   padding: 5px;
   text-align: center;
+  font-size: var(--font-regular);
 }
 
 .add_input {
@@ -67,6 +68,11 @@ body {
   border-right: none;
   border-bottom: 2px solid black;
   border-left: none;
+  font-size: var(--font-regular);
+}
+
+.add i {
+  font-size: var(--font-medium);
 }
 
 .receipt_bottom {
