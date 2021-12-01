@@ -46,21 +46,23 @@ body {
 .main {
   margin: auto;
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 500px;
 }
 
 /* Title */
 .title {
-  text-align: center;
   font-size: var(--font-large);
   padding: 10px;
 }
 
 /* Add Items */
 .add {
-  padding: 5px;
-  text-align: center;
+  width: 90%;
   font-size: var(--font-regular);
+  margin-bottom: 5px;
 }
 
 .add_input {
@@ -74,6 +76,42 @@ body {
 
 .add i {
   font-size: var(--font-medium);
+}
+
+/* Item List */
+.item-list {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-top: 5px;
+}
+
+.item-list button {
+  width: fit-content;
+  border: 2px solid black;
+  border-radius: var(--size-border-radius);
+  background-color: transparent;
+  font-size: var(--font-regular);
+  margin-bottom: 5px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item_checkbox {
+  margin-right: 10px;
+}
+
+.item_name {
+  width: 70%;
+}
+
+.item_price {
+  width: 20%;
+  text-align: right;
+  margin-right: 10px;
 }
 
 .receipt_bottom {
