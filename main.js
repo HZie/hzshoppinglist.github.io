@@ -29,6 +29,15 @@ add_button.addEventListener('click', () => {
   input_price.value = '';
 });
 
+// handle delete checked item button
+const deleteCheckedBtn = document.querySelector('.delete-checked-btn');
+const items = document.querySelectorAll('.item');
+deleteCheckedBtn.addEventListener('click', () => {
+  items.forEach((item) => {
+    if (item.classList.contains('checked')) item.remove();
+  });
+});
+
 // handle toggling item when item is clicked and delete item when delete button is clicked
 itemList.addEventListener('click', (event) => {
   if (event.target.classList.contains('item_delete-button')) {
