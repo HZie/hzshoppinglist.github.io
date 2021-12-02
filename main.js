@@ -1,5 +1,6 @@
 'use strict';
 
+// handle add event when add button is clicked
 const input_name = document.querySelector('.input_name');
 const input_price = document.querySelector('.input_price');
 const add_button = document.querySelector('.add_button');
@@ -28,6 +29,7 @@ add_button.addEventListener('click', () => {
   input_price.value = '';
 });
 
+// handle toggling item when item is clicked and delete item when delete button is clicked
 itemList.addEventListener('click', (event) => {
   if (event.target.classList.contains('item_delete-button')) {
     event.target.parentNode.remove();
