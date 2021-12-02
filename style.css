@@ -180,3 +180,37 @@ stop this because of unknown error
   transform: rotate(180deg);
   width: 500px;
 }
+
+@media (max-width: 480px) {
+  :root {
+    --font-large: 40px;
+    --font-medium: 20px;
+    --font-regulear: 12px;
+  }
+  .receipt_top {
+    width: 80%;
+  }
+  .main {
+    width: 80%;
+  }
+  .receipt_bottom {
+    width: 80%;
+  }
+
+  .add_button {
+    width: 80%;
+  }
+
+  .add_input {
+    height: 25px;
+    width: 40%;
+  }
+
+  .item-list {
+    margin-top: 3px;
+  }
+
+  item-list button {
+    margin-bottom: 3px;
+  }
+}
