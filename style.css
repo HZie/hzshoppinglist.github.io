@@ -62,10 +62,10 @@ ul {
 
 /* Add Items */
 .add_button {
-  width: 90%;
   font-size: var(--font-medium);
   text-align: right;
   margin-bottom: 3px;
+  margin-left: 85%;
 }
 
 .add_button:hover {
