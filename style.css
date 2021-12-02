@@ -91,6 +91,12 @@ ul {
 }
 
 /* Item List */
+.delete-checked-btn:hover {
+  cursor: pointer;
+  background-color: black;
+  color: var(--color-white);
+}
+
 .item-list {
   display: flex;
   flex-direction: column;
