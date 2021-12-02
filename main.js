@@ -79,7 +79,3 @@ function updateSummary() {
   sumUnchecked.textContent = `${uncheckedPrice} Won`;
   sumTotal.textContent = `${checkedPrice + uncheckedPrice} Won`;
 }
-
-/*
-3. 체크된 아이템, 체크되지 않은 아이템, 총 아이템들의 가격을 업데이트하기 (아이템이 추가/삭제될 때마다)
- */
