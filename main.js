@@ -5,8 +5,8 @@ const input_name = document.querySelector('.input_name');
 const input_price = document.querySelector('.input_price');
 const add_button = document.querySelector('.add_button');
 const itemList = document.querySelector('.item-list');
-let checkedPrice = 0;
-let uncheckedPrice = 0;
+let checkedPrice = new Number(0);
+let uncheckedPrice = new Number(0);
 
 add_button.addEventListener('click', () => {
   const itemName = input_name.value;
@@ -15,8 +15,8 @@ add_button.addEventListener('click', () => {
     alert('Please enter the item name.');
     return;
   }
-  if (itemPrice == '') {
-    itemPrice = 0;
+  if (isNaN(itemPrice)) {
+    itemPrice = new Number(0);
   }
 
   const item = document.createElement('li');
@@ -35,6 +35,14 @@ add_button.addEventListener('click', () => {
   updateSummary();
 });
 
+// handle enter key stroke when cursor is on the input field
+input_name.addEventListener('keydown', (event) => {
+  if (event.keyCode === 13) add_button.click();
+});
+input_price.addEventListener('keydown', (event) => {
+  if (event.keyCode === 13) add_button.click();
+});
+
 // handle delete checked item button
 const deleteCheckedBtn = document.querySelector('.delete-checked-btn');
 const items = document.querySelectorAll('.item');
@@ -42,7 +50,7 @@ deleteCheckedBtn.addEventListener('click', () => {
   items.forEach((item) => {
     if (item.classList.contains('checked')) item.remove();
   });
-  uncheckedPrice = 0;
+  uncheckedPrice = new Number(0);
   updateSummary();
 });
 
