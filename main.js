@@ -19,7 +19,6 @@ add_button.addEventListener('click', () => {
   const item = document.createElement('li');
   item.setAttribute('class', 'item');
   item.innerHTML = `
-          <input type="checkbox" class="item_checkbox" />
           <div class="item_name">${itemName}</div>
           <div class="item_price">${itemPrice}</div>
           <i class="item_delete-button far fa-trash-alt"></i>
@@ -29,17 +28,18 @@ add_button.addEventListener('click', () => {
   input_price.value = '';
 });
 
-const deleteBtn = document.querySelector('.item_delete-button');
-
-deleteBtn.addEventListener('click', () => {
-  console.log('clicked');
+itemList.addEventListener('click', (event) => {
+  if (event.target.classList.contains('item_delete-button')) {
+    event.target.parentNode.remove();
+  } else {
+    event.target.parentNode.classList.toggle('checked');
+  }
 });
 
 // TO DO
 /*
 [작성해야할 기능]
 
-2. delete버튼을 누르면 체크된 아이템들 삭제하기
 
 3. 체크된 아이템, 체크되지 않은 아이템, 총 아이템들의 가격을 업데이트하기 (아이템이 추가/삭제될 때마다)
  */
