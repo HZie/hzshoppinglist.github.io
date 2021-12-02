@@ -105,6 +105,7 @@ ul {
   width: 90%;
   margin-top: 5px;
   list-style-type: none;
+  overflow-y: auto;
 }
 
 /*
