@@ -43,6 +43,8 @@ input_price.addEventListener('keydown', (event) => {
   if (event.keyCode === 13) add_button.click();
 });
 
+/*
+// stop this function because of unknow bug
 // handle delete checked item button
 const deleteCheckedBtn = document.querySelector('.delete-checked-btn');
 const items = document.querySelectorAll('.item');
@@ -53,6 +55,7 @@ deleteCheckedBtn.addEventListener('click', () => {
   uncheckedPrice = new Number(0);
   updateSummary();
 });
+*/
 
 // handle toggling item when item is clicked and delete item when delete button is clicked
 itemList.addEventListener('click', (event) => {

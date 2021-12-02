@@ -91,20 +91,25 @@ ul {
 }
 
 /* Item List */
+
+/*
 .delete-checked-btn:hover {
   cursor: pointer;
   background-color: black;
   color: var(--color-white);
-}
+}*/
 
 .item-list {
   display: flex;
   flex-direction: column;
   width: 90%;
   margin-top: 5px;
+  list-style-type: none;
 }
 
-.item-list button {
+/*
+stop this because of unknown error
+.delete-checked-btn {
   font-family: 'Yeon Sung', cursive;
   width: fit-content;
   border: 2px solid black;
@@ -113,6 +118,7 @@ ul {
   font-size: var(--font-regular);
   margin-bottom: 5px;
 }
+*/
 
 .item {
   display: flex;
