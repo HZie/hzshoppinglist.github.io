@@ -24,7 +24,7 @@ add_button.addEventListener('click', () => {
   item.setAttribute('data-price', `${itemPrice}`);
   item.innerHTML = `
           <div class="item_name">${itemName}</div>
-          <div class="item_price">${itemPrice} Won</div>
+          <div class="item_price">${itemPrice} $</div>
           <i class="item_delete-button far fa-trash-alt"></i>
   `;
   itemList.appendChild(item);
@@ -83,7 +83,7 @@ const sumChecked = document.querySelector('.sum_checked-price');
 const sumUnchecked = document.querySelector('.sum_unchecked-price');
 const sumTotal = document.querySelector('.sum_total-price');
 function updateSummary() {
-  sumChecked.textContent = `${checkedPrice} Won`;
-  sumUnchecked.textContent = `${uncheckedPrice} Won`;
-  sumTotal.textContent = `${checkedPrice + uncheckedPrice} Won`;
+  sumChecked.textContent = `${checkedPrice} $`;
+  sumUnchecked.textContent = `${uncheckedPrice} $`;
+  sumTotal.textContent = `${checkedPrice + uncheckedPrice} $`;
 }
