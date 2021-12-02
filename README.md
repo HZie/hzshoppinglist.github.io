@@ -11,7 +11,7 @@ This is a toy project for practicing html/css/vanilla javascript.
 # Item Element
 1. Name
 2. Estimated Price
-3. Checkbox
+3. Delete Button
 
 # Design Concept 
 * Receipt
