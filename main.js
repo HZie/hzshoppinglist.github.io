@@ -1,14 +1,41 @@
 'use strict';
 
-// handle add event when add button is clicked
+const main = document.querySelector('.main');
+
 const input_name = document.querySelector('.input_name');
 const input_price = document.querySelector('.input_price');
-const add_button = document.querySelector('.add_button');
 const itemList = document.querySelector('.item-list');
 let checkedPrice = new Number(0);
 let uncheckedPrice = new Number(0);
 
-add_button.addEventListener('click', () => {
+main.addEventListener('click', (e) => {
+  if (e.target.classList.contains('add_button')) {
+    onClickAddBtn();
+  } else if (
+    e.target.classList.contains('item_name') ||
+    e.target.classList.contains('item_price')
+  ) {
+    onClickItem(e);
+  } else if (e.target.classList.contains('item_delete-button')) {
+    onClickItemDelete(e);
+  }
+  // else if(e.target.classList.contains("delete-checked-btn")){
+  //   onClickDeleteAllBtn();
+  // }
+});
+
+main.addEventListener('keydown', (e) => {
+  if (
+    e.target.classList.contains('input_name') ||
+    e.target.classList.contains('input_price')
+  ) {
+    if (e.keyCode === 13) onClickAddBtn();
+    focus();
+  }
+});
+
+// handle add event when add button is clicked
+function onClickAddBtn() {
   const itemName = input_name.value;
   let itemPrice = parseInt(input_price.value);
   if (itemName == '') {
@@ -33,53 +60,47 @@ add_button.addEventListener('click', () => {
 
   uncheckedPrice += itemPrice;
   updateSummary();
-});
+}
 
-// handle enter key stroke when cursor is on the input field
-input_name.addEventListener('keydown', (event) => {
-  if (event.keyCode === 13) add_button.click();
-});
-input_price.addEventListener('keydown', (event) => {
-  if (event.keyCode === 13) add_button.click();
-});
+// handle toggling item when item is clicked and delete item when delete button is clicked
+function onClickItem(event) {
+  const currPrice = parseInt(event.target.parentNode.dataset.price);
+  if (event.target.parentNode.classList.contains('checked')) {
+    event.target.parentNode.classList.remove('checked');
+    uncheckedPrice += currPrice;
+    checkedPrice -= currPrice;
+  } else {
+    event.target.parentNode.classList.add('checked');
+    checkedPrice += currPrice;
+    uncheckedPrice -= currPrice;
+  }
+
+  updateSummary();
+}
+
+function onClickItemDelete(event) {
+  const currPrice = parseInt(event.target.parentNode.dataset.price);
+  event.target.parentNode.remove();
+  if (event.target.parentNode.classList.contains('checked')) {
+    checkedPrice -= currPrice;
+  } else {
+    uncheckedPrice -= currPrice;
+  }
+  updateSummary();
+}
 
 /*
 // stop this function because of unknow bug
 // handle delete checked item button
-const deleteCheckedBtn = document.querySelector('.delete-checked-btn');
 const items = document.querySelectorAll('.item');
-deleteCheckedBtn.addEventListener('click', () => {
-  items.forEach((item) => {
+function onClickDelteAllBtn(){
+items.forEach((item) => {
     if (item.classList.contains('checked')) item.remove();
   });
   uncheckedPrice = new Number(0);
   updateSummary();
-});
-*/
-
-// handle toggling item when item is clicked and delete item when delete button is clicked
-itemList.addEventListener('click', (event) => {
-  const currPrice = parseInt(event.target.parentNode.dataset.price);
-  if (event.target.classList.contains('item_delete-button')) {
-    event.target.parentNode.remove();
-    if (event.target.parentNode.classList.contains('checked')) {
-      checkedPrice -= currPrice;
-    } else {
-      uncheckedPrice -= currPrice;
-    }
-  } else {
-    if (event.target.parentNode.classList.contains('checked')) {
-      event.target.parentNode.classList.remove('checked');
-      uncheckedPrice += currPrice;
-      checkedPrice -= currPrice;
-    } else {
-      event.target.parentNode.classList.add('checked');
-      checkedPrice += currPrice;
-      uncheckedPrice -= currPrice;
-    }
-  }
-  updateSummary();
-});
+}
+ */
 
 // update sum when item is added / deleted / checked / unchecked
 const sumChecked = document.querySelector('.sum_checked-price');
