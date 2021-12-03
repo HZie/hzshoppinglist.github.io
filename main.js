@@ -8,10 +8,13 @@ const itemList = document.querySelector('.item-list');
 let checkedPrice = new Number(0);
 let uncheckedPrice = new Number(0);
 
-main.addEventListener('click', (e) => {
-  if (e.target.classList.contains('add_button')) {
-    onClickAddBtn();
-  } else if (
+const addBtn = document.querySelector('.add_button');
+addBtn.addEventListener('click', () => {
+  onClickAddBtn();
+});
+
+itemList.addEventListener('click', (e) => {
+  if (
     e.target.classList.contains('item_name') ||
     e.target.classList.contains('item_price')
   ) {
@@ -19,18 +22,28 @@ main.addEventListener('click', (e) => {
   } else if (e.target.classList.contains('item_delete-button')) {
     onClickItemDelete(e);
   }
-  // else if(e.target.classList.contains("delete-checked-btn")){
-  //   onClickDeleteAllBtn();
-  // }
 });
 
-main.addEventListener('keydown', (e) => {
+const addContainer = document.querySelector('.add');
+addContainer.addEventListener('keydown', (e) => {
   if (
     e.target.classList.contains('input_name') ||
     e.target.classList.contains('input_price')
   ) {
-    if (e.keyCode === 13) onClickAddBtn();
-    focus();
+    if (e.key === 'Enter') {
+      onClickAddBtn();
+      focus();
+    } else if (
+      e.key === 'ArrowRight' &&
+      e.target.classList.contains('input_name')
+    ) {
+      input_price.focus();
+    } else if (
+      e.key === 'ArrowLeft' &&
+      e.target.classList.contains('input_price')
+    ) {
+      input_name.focus();
+    }
   }
 });
 
@@ -92,6 +105,12 @@ function onClickItemDelete(event) {
 /*
 // stop this function because of unknow bug
 // handle delete checked item button
+
+const deleteCheckedBtn = document.querySelector('.delete_checked-btn');
+deleteCheckedBtn.addEventListner('click', () =>{
+  onClickDeleteAllBtn();
+});
+
 const items = document.querySelectorAll('.item');
 function onClickDelteAllBtn(){
 items.forEach((item) => {
