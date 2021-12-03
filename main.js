@@ -26,6 +26,7 @@ itemList.addEventListener('click', (e) => {
 
 const addContainer = document.querySelector('.add');
 addContainer.addEventListener('keydown', (e) => {
+  if (e.isComposing) return;
   if (
     e.target.classList.contains('input_name') ||
     e.target.classList.contains('input_price')
