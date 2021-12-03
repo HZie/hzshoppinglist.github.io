@@ -37,6 +37,7 @@ ul {
   margin: 0;
   padding: 0;
 }
+
 /* Main */
 
 .receipt_top {
@@ -63,7 +64,6 @@ ul {
 /* Add Items */
 .add_button {
   font-size: var(--font-medium);
-  text-align: right;
   margin-bottom: 3px;
   margin-left: 85%;
 }
